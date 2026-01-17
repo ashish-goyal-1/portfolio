@@ -10,6 +10,8 @@
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --accent-cyan: #00d9ff;
+    --accent-primary: #00d9ff;
+    /* Single accent color instead of gradient */
     --accent-purple: #a855f7;
     --accent-pink: #ec4899;
 
@@ -58,10 +60,8 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-cyan);
+    /* Solid color instead of gradient */
 }
 
 .glass-card {
@@ -94,7 +94,8 @@ body {
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    background: var(--accent-cyan);
+    /* Solid color instead of gradient */
     margin: var(--spacing-sm) auto 0;
     border-radius: 2px;
 }
@@ -127,12 +128,9 @@ body {
     font-family: var(--font-primary);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--accent-cyan);
+    /* Solid color instead of gradient */
     text-decoration: none;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .nav-menu {
@@ -156,7 +154,8 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    background: var(--accent-cyan);
+    /* Solid color */
     transition: width var(--transition-speed);
 }
 
@@ -197,28 +196,14 @@ body {
 
 .hero::before {
     content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0, 217, 255, 0.15), transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: float 8s ease-in-out infinite;
+    display: none;
+    /* Completely hidden */
 }
 
 .hero::after {
     content: '';
-    position: absolute;
-    bottom: -50%;
-    left: -20%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: float 10s ease-in-out infinite reverse;
+    display: none;
+    /* Completely hidden */
 }
 
 @keyframes float {
@@ -288,14 +273,19 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-    color: var(--text-primary);
+    background: var(--accent-cyan);
+    /* Solid color instead of gradient */
+    color: #000000;
+    /* Dark text on light button */
     border: none;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+    background: #00c4e6;
+    /* Slightly darker on hover */
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.2);
+    /* Subtle shadow */
 }
 
 .btn-secondary {
@@ -321,7 +311,7 @@ body {
     backdrop-filter: blur(var(--blur-amount));
     border: 1px solid var(--glass-border);
     border-radius: 15px;
-    animation: floatCard 6s ease-in-out infinite;
+    /* Removed floating animation */
 }
 
 .card-1 {
@@ -329,7 +319,6 @@ body {
     height: 150px;
     top: 0;
     left: 0;
-    animation-delay: 0s;
 }
 
 .card-2 {
@@ -337,7 +326,6 @@ body {
     height: 180px;
     top: 50%;
     right: 20%;
-    animation-delay: 2s;
 }
 
 .card-3 {
@@ -345,20 +333,9 @@ body {
     height: 120px;
     bottom: 10%;
     left: 30%;
-    animation-delay: 4s;
 }
 
-@keyframes floatCard {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(5deg);
-    }
-}
+/* Removed floatCard animation */
 
 /* ===========================
    About Section
@@ -429,10 +406,8 @@ body {
 .skill-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-cyan);
+    /* Solid color instead of gradient */
 }
 
 .skill-card h3 {
